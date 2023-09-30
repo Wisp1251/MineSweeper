@@ -234,8 +234,6 @@ void Logic() {
 			if (choose != 2)std::cout<< "Put up a flag" << std::endl;
 			else std::cout << symbol_activ_pole << "Put up a flag" << symbol_activ_pole << std::endl;
 
-			std::cout << std::endl << choose << std::endl;
-
 
 			if (_kbhit()) {
 				switch (_getch())
@@ -287,7 +285,7 @@ void Logic() {
 	if (game == false) {
 		
 		do{
-			std::cout << std::endl << std::endl << "You wont return game?\nYes(1)\tNo(2)" << std::endl;
+			std::cout << std::endl << std::endl << "Enter:\n (1)For return game\t(2)For exit to main menu" << std::endl;
 			std::cin >> choose;
 			switch (choose) {
 			case 1: Setup(); game = true; system("cls"); std::cout << std::endl << "New game" << std::endl; Sleep(700); break;
@@ -314,14 +312,7 @@ void Input() {
 			case 'd':if (user_y + 1 > 0 && user_y + 1 <= wight)user_y += 1; break;
 			case 13: case 32:open = true; break;
 			case 27:
-				std::cout << std::endl << "You wont exit to mein menu?" << std::endl;
-				std::cin >> choose;
-				switch (choose) {
-					default: std::cout << "Error" << std::endl; Sleep(400); break;
-					case 1: system("cls"); std::cout << "Exit>>" << std::endl; Sleep(400); game = false; break;
-					case 2: system("cls");
-				}
-			 break;
+				game = false; break;
 			}
 		}
 	}
